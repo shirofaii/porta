@@ -108,4 +108,24 @@ public struct HexPosition {
     public override string ToString() {
         return string.Format("hex [{0}, {1}, {2}]", x, y, z);
     }
+
+    public static HexPosition Rounded(float x, float y, float z) {
+        var rx = Mathf.RoundToInt(x);
+        var ry = Mathf.RoundToInt(y);
+        var rz = Mathf.RoundToInt(z);
+
+        var dx = Math.Abs(rx - x);
+        var dy = Math.Abs(ry - y);
+        var dz = Math.Abs(rz - z);
+
+        if(dx > dy && dx > dz) {
+            rx = -ry-rz;
+        } else if(dy > dz) {
+            ry = -rx-rz;
+        } else {
+            rz = -rx-ry;
+        }
+
+        return new HexPosition(rx, ry, rz);
+    }
 }
