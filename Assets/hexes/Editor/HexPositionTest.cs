@@ -3,6 +3,7 @@ using UnityEditor;
 using UnityEngine.TestTools;
 using NUnit.Framework;
 using System.Collections;
+using System.Linq;
 
 public class HexPositionTest {
 	[Test]
@@ -33,4 +34,16 @@ public class HexPositionTest {
 		Assert.True(Direction.s.Rotate(8) == Direction.nw);
 		Assert.True(Direction.s.Rotate(12) == Direction.s);
 	}
+
+    [Test]
+    public void HexPosTest() {
+        var center = new HexPosition(0, 0, 0);
+        var pos = center + center.TowardsDirection(Direction.nw, 3);
+        Assert.AreEqual(pos, new HexPosition(-3, 3, 0));
+        Assert.True(center.DistanceTo(pos) == 3);
+
+        var ring = center.Ring(3);
+        Assert.True(ring.Contains(pos));
+        Assert.True(ring.All(x => center.DistanceTo(x) == 3));
+    }
 }

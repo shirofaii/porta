@@ -26,32 +26,31 @@ public struct HexPosition {
         return this + (dir.AsHexPosition() * step);
     }
 
-    public int DistanceTo(HexPosition b) {
-        var a = this;
-        return (Math.Abs(a.x - b.x) + Math.Abs(a.y - b.y) + Math.Abs(a.z - b.z)) / 2;
+    public int DistanceTo(HexPosition dist) {
+        return (Math.Abs(x - dist.x) + Math.Abs(y - dist.y) + Math.Abs(z - dist.z)) / 2;
     }
 
     public static HexPosition operator+(HexPosition a, HexPosition b) {
         var result = new HexPosition(a);
-        a.x += b.x;
-        a.y += b.y;
-        a.z += b.z;
+        result.x += b.x;
+        result.y += b.y;
+        result.z += b.z;
         return result;
     }
 
     public static HexPosition operator-(HexPosition a, HexPosition b) {
         var result = new HexPosition(a);
-        a.x -= b.x;
-        a.y -= b.y;
-        a.z -= b.z;
+        result.x -= b.x;
+        result.y -= b.y;
+        result.z -= b.z;
         return result;
     }
 
     public static HexPosition operator*(HexPosition a, int k) {
         var result = new HexPosition(a);
-        a.x *= k;
-        a.y *= k;
-        a.z *= k;
+        result.x *= k;
+        result.y *= k;
+        result.z *= k;
         return result;
     }
 
@@ -69,12 +68,15 @@ public struct HexPosition {
         if(radius == 0) return new List<HexPosition>() { this };
 
         var result = new List<HexPosition>();
-        var cursor = TowardsDirection(Direction.se, radius);
+        var dir = Direction.ne;
+        var cursor = TowardsDirection(dir, radius);
+        dir = dir.Rotate(2);
         for(var i = 0; i < AllDirections.Length; i++) {
             for(var j = 0; j < radius; j++) {
                 result.Add(cursor);
-                cursor = TowardsDirection((Direction)i);
+                cursor += TowardsDirection(dir);
             }
+            dir = dir.Rotate(1);
         }
         return result;
     }
@@ -101,5 +103,9 @@ public struct HexPosition {
             hash *= 23 + z;
             return hash;
         }
+    }
+
+    public override string ToString() {
+        return string.Format("hex [{0}, {1}, {2}]", x, y, z);
     }
 }

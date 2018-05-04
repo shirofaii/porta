@@ -13,38 +13,23 @@ public enum Side {
     all  = 63
 }
 
-public enum Direction {
-    n    = 1,
-    ne   = 2,
-    se   = 3,
-    s    = 4,
-    sw   = 5,
-    nw   = 6
-}
+public enum Direction { n, ne, se, s, sw, nw }
 
 public static class DirectionExt {
-    public static Direction Opposite(this Direction dir) {
-        switch(dir) {
-            case Direction.n: return Direction.s;
-            case Direction.ne: return Direction.sw;
-            case Direction.se: return Direction.nw;
-            case Direction.s: return Direction.n;
-            case Direction.sw: return Direction.ne;
-            case Direction.nw: return Direction.se;
-            default: throw new Exception();
-        }
+    private static HexPosition[] vectors = {
+        new HexPosition(0, 1, -1),
+        new HexPosition(1, 0, -1),
+        new HexPosition(1, -1, 0),
+        new HexPosition(0, -1, 1),
+        new HexPosition(-1, 0, 1),
+        new HexPosition(-1, 1, 0)
+    };
+    public static HexPosition AsHexPosition(this Direction dir) {
+        return vectors[(int)dir];
     }
 
-    public static HexPosition AsHexPosition(this Direction dir) {
-        switch(dir) {
-            case Direction.n: return new HexPosition(0, 1, -1);
-            case Direction.ne: return new HexPosition(1, 0, -1);
-            case Direction.se: return new HexPosition(1, -1, 0);
-            case Direction.s: return new HexPosition(0, -1, 1);
-            case Direction.sw: return new HexPosition(-1, 0, 1);
-            case Direction.nw: return new HexPosition(-1, 1, 0);
-            default: throw new Exception();
-        }
+    public static Direction Opposite(this Direction dir) {
+        return dir.Rotate(3);
     }
 
     public static Direction Rotate(this Direction dir, int step) {
@@ -58,7 +43,7 @@ public static class DirectionExt {
 
         step = step % 6;
         var result = (int)dir + step;
-        if(result > 6) {
+        if(result >= 6) {
             result -= 6;
         }
         return (Direction)result;
@@ -68,7 +53,7 @@ public static class DirectionExt {
 
         step = step % 6;
         var result = (int)dir - step;
-        if(result <= 0) {
+        if(result < 0) {
             result += 6;
         }
         return (Direction)result;
