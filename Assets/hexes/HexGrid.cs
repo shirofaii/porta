@@ -3,20 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class HexGrid {
+public class HexGrid : MonoBehaviour {
     Dictionary<HexPosition, HexSlot> map = new Dictionary<HexPosition, HexSlot>();
-    public HexLayout layout = new HexLayout() { radius = 1f };
+    public HexLayout layout;
+    public int radius = 3;
+    public HexSlot slotPrefab;
 
-    public static HexGrid CreateMapWithRadius(int radius) {
-        var result = new HexGrid();
+    [ExecuteInEditMode]
+    [ContextMenu ("Init")]
+    public void Init() {
+        layout = new HexLayout() { radius = slotPrefab.GetComponent<CircleCollider2D>().radius };
+        map = new Dictionary<HexPosition, HexSlot>();
         new HexPosition(0, 0, 0).AreaInRadius(radius).ForEach(x => {
-            result[x] = new HexSlot(x, result);
+            CreateSlot(x);
         });
-        return result;
     }
 
     public HexSlot CreateSlot(HexPosition atPos) {
-        var newSlot = new HexSlot(atPos, this);
+        var newSlot = Instantiate(slotPrefab, Vector3.zero, Quaternion.identity, transform);
+        newSlot.Init(atPos, this);
         map[atPos] = newSlot;
         return newSlot;
     }
@@ -26,7 +31,7 @@ public class HexGrid {
         return map[pos];
     } set {
         map[pos] = value;
-    } }
+    }}
 
     
 }
