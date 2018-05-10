@@ -10,7 +10,7 @@ public class HexGrid : MonoBehaviour {
     public HexSlot slotPrefab;
 
     [ExecuteInEditMode]
-    [ContextMenu ("Init")]
+    [ContextMenu("Init")]
     public void Init() {
         layout = new HexLayout() { radius = slotPrefab.GetComponent<CircleCollider2D>().radius };
         map = new Dictionary<HexPosition, HexSlot>();

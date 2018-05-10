@@ -6,5 +6,6 @@ using UnityEngine;
 public class Player : MonoBehaviour {
     public PlayerController controller;
     public string nickname;
-    
+    public Character character;
+
 }
