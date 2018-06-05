@@ -10,7 +10,7 @@ public enum Immunity {
     All, None
 }
 
-public class DefenseSlot : ScriptableObject {
+public class DefenseSlot : MonoBehaviour {
     public Immunity immunity = Immunity.None;
     public int health = 1;
 }
