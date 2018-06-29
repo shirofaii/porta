@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tile : MonoBehaviour {
+public class HexTile : MonoBehaviour {
     public enum Type { Hero, Unit, Action, Upgrade, Floor };
 
     [EnumToggleButtons, HideLabel] public Type type;
@@ -23,6 +23,11 @@ public class Tile : MonoBehaviour {
             sectors[i] = prefab.GetComponent<Sector>();
         }
     }
+
+    public SpriteRenderer background;
+
+    
+    [NonSerialized] public Player player;
 
     public Sector this[Direction dir] { get {
         return sectors[(int)dir];
