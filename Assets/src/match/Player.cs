@@ -11,4 +11,11 @@ public class Player : MonoBehaviour {
     [ColorPalette("Player colors")] public Color color;
     public Deck deck;
     public GameObject hero;
+
+    [NonSerialized] public PlayerTable table;
+
+    void Awake() {
+        table = GetComponentInChildren<PlayerTable>();
+        controller = GetComponent<PlayerController>();
+    }
 }

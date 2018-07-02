@@ -32,4 +32,8 @@ public class HexSlot : MonoBehaviour {
         tile = null;
         return t;
     }
+
+    void OnMouseDown() {
+        
+    }
 }

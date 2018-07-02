@@ -12,7 +12,15 @@ public class Match : MonoBehaviour {
         players = GetComponentsInChildren<Player>();
     }
 
+    void Start() {
+        StartCoroutine(Begin());
+    }
+
     public IEnumerator Begin() {
+        foreach(var player in players) {
+            player.table.DrawHero();
+            yield return player.controller.SetupHero();
+        }
         yield return null;
     }
 }

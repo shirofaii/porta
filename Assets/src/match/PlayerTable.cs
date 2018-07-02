@@ -13,7 +13,7 @@ public class PlayerTable : MonoBehaviour {
     private HexSlot[] choices;
     private Player player;
 
-    void Start() {
+    void Awake() {
         choices = GetComponentsInChildren<HexSlot>();
         player = GetComponentInParent<Player>();
     }

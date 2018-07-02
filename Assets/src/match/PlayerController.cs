@@ -6,4 +6,5 @@ using UnityEngine;
 public interface PlayerController {
     //public IEnumerator PlaceTile()
     //public IEnumerator RotateTile()
+    IEnumerator SetupHero();
 }
