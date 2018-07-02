@@ -7,6 +7,7 @@ public class HexSlot : MonoBehaviour {
     [HideInInspector] public HexGrid grid;
     public HexPosition position;
     [NonSerialized] public HexTile tile;
+    public bool dragable = true;
 
     public void Init(HexPosition pos, HexGrid grid) {
         this.grid = grid;
@@ -33,7 +34,19 @@ public class HexSlot : MonoBehaviour {
         return t;
     }
 
-    void OnMouseDown() {
-        
+    void OnMouseDrag() {
+        if(!dragable || tile == null) return;
+
+        var mp = Input.mousePosition;
+        mp.z = 1f;
+        tile.transform.position = Camera.main.ScreenToWorldPoint(mp);
     }
+
+    void OnMouseUp() {
+        if(!dragable || tile == null) return;
+
+        tile.transform.position = transform.position;
+    }
+
+
 }

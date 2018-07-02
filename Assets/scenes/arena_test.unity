@@ -321,6 +321,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 716746403}
+  dragable: 1
 --- !u!1 &106562755
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,7 +334,7 @@ GameObject:
   - component: {fileID: 106562759}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -615,6 +616,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 716746403}
+  dragable: 1
 --- !u!1 &440038365
 GameObject:
   m_ObjectHideFlags: 0
@@ -673,6 +675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 716746403}
+  dragable: 1
 --- !u!1 &462050419
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,6 +809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 716746403}
+  dragable: 1
 --- !u!1 &479473197
 GameObject:
   m_ObjectHideFlags: 0
@@ -892,6 +896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 716746403}
+  dragable: 1
 --- !u!1 &564138168
 GameObject:
   m_ObjectHideFlags: 0
@@ -949,6 +954,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 716746403}
+  dragable: 1
 --- !u!1 &595307481
 GameObject:
   m_ObjectHideFlags: 0
@@ -1007,6 +1013,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 716746403}
+  dragable: 1
 --- !u!1 &647852325
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,6 +1174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 716746403}
+  dragable: 1
 --- !u!1 &716746402
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,6 +1295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 716746403}
+  dragable: 1
 --- !u!1 &819483310
 GameObject:
   m_ObjectHideFlags: 0
@@ -1495,6 +1504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 716746403}
+  dragable: 1
 --- !u!1 &924230470
 GameObject:
   m_ObjectHideFlags: 0
@@ -1553,6 +1563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 716746403}
+  dragable: 1
 --- !u!1 &946657056
 GameObject:
   m_ObjectHideFlags: 0
@@ -1685,6 +1696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 716746403}
+  dragable: 1
 --- !u!1 &966587197
 GameObject:
   m_ObjectHideFlags: 0
@@ -1743,6 +1755,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 716746403}
+  dragable: 1
 --- !u!1 &1014407118
 GameObject:
   m_ObjectHideFlags: 0
@@ -1859,6 +1872,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 716746403}
+  dragable: 1
 --- !u!1 &1038027758
 GameObject:
   m_ObjectHideFlags: 0
@@ -1917,6 +1931,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 716746403}
+  dragable: 1
 --- !u!1 &1045510676
 GameObject:
   m_ObjectHideFlags: 0
@@ -2317,6 +2332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 716746403}
+  dragable: 1
 --- !u!1 &1457428706
 GameObject:
   m_ObjectHideFlags: 0
@@ -2375,6 +2391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 716746403}
+  dragable: 1
 --- !u!1 &1485034318
 GameObject:
   m_ObjectHideFlags: 0
@@ -2432,6 +2449,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 716746403}
+  dragable: 1
 --- !u!1 &1508164431
 GameObject:
   m_ObjectHideFlags: 0
@@ -2640,6 +2658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 716746403}
+  dragable: 1
 --- !u!1 &1567643853
 GameObject:
   m_ObjectHideFlags: 0
@@ -2773,6 +2792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 716746403}
+  dragable: 1
 --- !u!1 &1605392464
 GameObject:
   m_ObjectHideFlags: 0
@@ -2831,6 +2851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 716746403}
+  dragable: 1
 --- !u!1 &1647741608
 GameObject:
   m_ObjectHideFlags: 0
@@ -3097,6 +3118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 716746403}
+  dragable: 1
 --- !u!1 &1848458471
 GameObject:
   m_ObjectHideFlags: 0
@@ -3155,6 +3177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 716746403}
+  dragable: 1
 --- !u!1 &1948023965
 GameObject:
   m_ObjectHideFlags: 0
@@ -3287,6 +3310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 716746403}
+  dragable: 1
 --- !u!1 &2002869555
 GameObject:
   m_ObjectHideFlags: 0
@@ -3496,3 +3520,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 716746403}
+  dragable: 1
