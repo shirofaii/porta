@@ -21,14 +21,15 @@ public class HexSlot : MonoBehaviour {
         tile = GetComponent<HexTile>();
     }
 
-    public bool CanPin(HexTile tile) {
+    public bool CanPin(HexTile target) {
         return tile == null;
     }
 
     public void Pin(HexTile tile) {
         this.tile = tile;
         
-        tile.transform.SetParent(transform, false);
+        tile.transform.SetParent(transform);
+        tile.transform.localPosition = Vector3.zero;
         tile.gameObject.SetActive(true);
     }
 
