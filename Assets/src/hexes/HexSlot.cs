@@ -21,6 +21,10 @@ public class HexSlot : MonoBehaviour {
         tile = GetComponent<HexTile>();
     }
 
+    public bool CanPin(HexTile tile) {
+        return tile == null;
+    }
+
     public void Pin(HexTile tile) {
         this.tile = tile;
         
@@ -45,8 +49,23 @@ public class HexSlot : MonoBehaviour {
     void OnMouseUp() {
         if(!dragable || tile == null) return;
 
-        tile.transform.position = transform.position;
+        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        var hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity);
+        if(hit == null) { CancelDrop(); return; }
+
+        var slot = hit.collider.gameObject.GetComponent<HexSlot>();
+        if(slot == null) { CancelDrop(); return; }
+        if(!slot.CanPin(tile)) { CancelDrop(); return; }
+
+        DropTo(slot);
     }
 
+    public void DropTo(HexSlot target) {
+        var t = this.Unpin();
+        target.Pin(t);
+    }
 
+    void CancelDrop() {
+        tile.transform.position = transform.position;
+    }
 }
