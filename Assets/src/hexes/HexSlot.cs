@@ -52,7 +52,7 @@ public class HexSlot : MonoBehaviour {
 
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         var hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity);
-        if(hit == null) { CancelDrop(); return; }
+        if(hit.collider == null) { CancelDrop(); return; }
 
         var slot = hit.collider.gameObject.GetComponent<HexSlot>();
         if(slot == null) { CancelDrop(); return; }

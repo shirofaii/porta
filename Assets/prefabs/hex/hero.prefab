@@ -740,7 +740,7 @@ GameObject:
   - component: {fileID: 4777139570105266}
   - component: {fileID: 114668389172118638}
   - component: {fileID: 114854297435967606}
-  - component: {fileID: 114727685530790930}
+  - component: {fileID: 210390384977169098}
   m_Layer: 0
   m_Name: hero
   m_TagString: Untagged
@@ -897,7 +897,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4205960150902180}
   - component: {fileID: 212482973012449804}
-  - component: {fileID: 331837751776082974}
+  - component: {fileID: 331023659702485272}
   m_Layer: 0
   m_Name: bkg
   m_TagString: Untagged
@@ -2076,17 +2076,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponSlot: {fileID: 114963208510446870}
   defenseSlot: {fileID: 114501346388906438}
---- !u!114 &114727685530790930
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1865609015447676}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c429e121fa2a2304da8d801c6f18268e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114775721176744130
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2172,6 +2161,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weaponSlot: {fileID: 114207693198890232}
   defenseSlot: {fileID: 114841289622371770}
+--- !u!210 &210390384977169098
+SortingGroup:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1865609015447676}
+  m_Enabled: 1
+  m_SortingLayerID: -851034839
+  m_SortingLayer: 2
+  m_SortingOrder: 0
 --- !u!212 &212084790503601666
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -2795,7 +2794,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0.006, y: 0.021}
   m_SizeDelta: {x: 8.65, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!331 &331837751776082974
+--- !u!331 &331023659702485272
 SpriteMask:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2836,7 +2835,7 @@ SpriteMask:
   m_BackSortingLayerID: 0
   m_FrontSortingLayer: 0
   m_BackSortingLayer: 0
-  m_FrontSortingOrder: 0
-  m_BackSortingOrder: 0
+  m_FrontSortingOrder: 2
+  m_BackSortingOrder: 1
   m_IsCustomRangeActive: 0
   m_SpriteSortPoint: 0
