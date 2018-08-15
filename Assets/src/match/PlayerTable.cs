@@ -26,6 +26,7 @@ public class PlayerTable : MonoBehaviour {
             x.SetActive(false);
             tile.player = player;
             tile.background.color = player.color;
+
             return tile;
         }).ToList();
     }
@@ -42,11 +43,7 @@ public class PlayerTable : MonoBehaviour {
     public void DrawHero() {
         var tile = Instantiate(player.hero).GetComponent<HexTile>();
         tile.player = player;
-
-        float h, s, v;
-        Color.RGBToHSV(player.color, out h, out s, out v);
-        s = Mathf.Clamp01(s - 0.1f);
-        tile.background.color = Color.HSVToRGB(h, s, v);
+        tile.background.color = player.color;
 
         var firstAvailable = choices.First(x => x.tile == null);
         firstAvailable.Pin(tile);
@@ -67,5 +64,4 @@ public class PlayerTable : MonoBehaviour {
             tile.transform.SetParent(pile);
         }
     }
-    
 }

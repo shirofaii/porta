@@ -9,6 +9,9 @@ public class HexSlot : MonoBehaviour {
     [NonSerialized] public HexTile tile;
     public bool dragable = true;
 
+    [NonSerialized] public Quaternion wantedRotation;
+    [NonSerialized] public Vector3 wantedPosition;
+
     public void Init(HexPosition pos, HexGrid grid) {
         this.grid = grid;
         this.position = pos;
@@ -29,8 +32,10 @@ public class HexSlot : MonoBehaviour {
         this.tile = tile;
         
         tile.transform.SetParent(transform);
-        tile.transform.localPosition = Vector3.zero;
         tile.gameObject.SetActive(true);
+
+        wantedRotation = Quaternion.identity;
+        wantedPosition = transform.position;
     }
 
     public HexTile Unpin() {
@@ -39,13 +44,32 @@ public class HexSlot : MonoBehaviour {
         return t;
     }
 
+    void Update() {
+        if(tile == null) return;
+
+        tile.transform.position = Vector3.Lerp(tile.transform.position, wantedPosition, 0.5f);
+        tile.transform.rotation = Quaternion.Lerp(tile.transform.rotation, wantedRotation, 0.1f);
+
+        // if(!dragable || Input.mouseScrollDelta == Vector2.zero) return;
+
+        // var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        // var hit = Physics2D.Raycast(ray.origin, ray.direction, Mathf.Infinity);
+        // if(hit.collider == null || hit.collider != GetComponent<Collider2D>()) return;
+
+        // OnMouseWheel(Input.GetAxis("Mouse ScrollWheel"));
+    }
+
     void OnMouseDrag() {
         if(!dragable || tile == null) return;
 
         var mp = Input.mousePosition;
         mp.z = 1f;
-        tile.transform.position = Camera.main.ScreenToWorldPoint(mp);
+        wantedPosition = Camera.main.ScreenToWorldPoint(mp);
     }
+
+    // void OnMouseWheel(float dt) {
+    //     wantedRotation = Quaternion.AngleAxis(wantedRotation.eulerAngles.z + 60 * dt, Vector3.forward);
+    // }
 
     void OnMouseUp() {
         if(!dragable || tile == null) return;
@@ -67,6 +91,6 @@ public class HexSlot : MonoBehaviour {
     }
 
     void CancelDrop() {
-        tile.transform.position = transform.position;
+        wantedPosition = transform.position;
     }
 }

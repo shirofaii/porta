@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour {
-    public PlayerController controller;
     public string nickname;
     public Character character;
     [ColorPalette("Player colors")] public Color color;
@@ -16,6 +15,9 @@ public class Player : MonoBehaviour {
 
     void Awake() {
         table = GetComponentInChildren<PlayerTable>();
-        controller = GetComponent<PlayerController>();
     }
+
+    public List<HexTile> ownedTiles { get {
+        return HexGrid.board.AllTiles(x => x.player == this);
+    } }
 }

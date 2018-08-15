@@ -13,4 +13,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tiles:
   - amount: 30
-    prefab: {fileID: 1679711095360524, guid: 4d64ed2810557994fbbf172fc19b921f, type: 2}
+    prefab: {fileID: 1278740966779962, guid: e3e3aeefca2c26e48b9c6ecba4352301, type: 2}
