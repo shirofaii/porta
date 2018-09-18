@@ -1,4 +1,3 @@
-using Sirenix.OdinInspector;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,8 +12,8 @@ public enum WeaponType {
 }
 
 public class WeaponSlot : MonoBehaviour {
-    [EnumToggleButtons, HideLabel, OnValueChanged("Redraw")] public WeaponType weaponType = WeaponType.None;
-    [EnumToggleButtons, HideLabel, OnValueChanged("Redraw")] public DamageType damageType = DamageType.Steel;
+    public WeaponType weaponType = WeaponType.None;
+    public DamageType damageType = DamageType.Steel;
 
     public GameObject[] weaponView;
 
