@@ -5,14 +5,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HexTile : MonoBehaviour {
-    public enum Type { Hero, Unit, Action, Upgrade, Floor };
+    public enum Type { Hero, Unit, Action, Upgrade, Floor, Wall, Secret };
 
-    public Type type;
-    private Sector[] sectors = new Sector[6];
-    public GameObject[] sectorLocators;
-    public GameObject sectorPrefab;
+    [SerializeField] Sector[] sectors = new Sector[6];
     public SpriteRenderer background;
+
     [NonSerialized] public Player player;
+    [NonSerialized] public Type type;
 
     public Sector this[Direction dir] { get {
         return sectors[(int)dir];
