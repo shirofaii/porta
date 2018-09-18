@@ -4,10 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum Immunity {
-    Steel, Fire, Ice, Acid, Wind, Holy, Dark,
-    Ranged, Melee,
+    None, Steel, Fire, Ice, Acid, Wind, Holy, Dark,
     Hero,
-    All, None
 }
 
 public class DefenseSlot : MonoBehaviour {

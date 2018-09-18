@@ -7,7 +7,7 @@ using UnityEditor;
 #endif
 
 [Serializable]
-    public class DeckEntry {
+public class DeckEntry {
     public int amount = 1;
     public GameObject prefab;
 }
