@@ -7,18 +7,18 @@ using UnityEditor;
 #endif
 
 [Serializable]
-public class DeckEntry {
+public class DeckAssetEntry {
     public int amount = 1;
     public GameObject prefab;
 }
 
-public class Deck : ScriptableObject {
-    public List<DeckEntry> tiles;
+public class DeckAsset : ScriptableObject {
+    public List<DeckAssetEntry> tiles;
 
 #if UNITY_EDITOR
 	[MenuItem("Assets/Create/Deck")]
 	public static void CreateAsset() {
-		EditorUtils.CreateAsset<Deck>();
+		EditorUtils.CreateAsset<DeckAsset>();
 	}
 #endif
 }

@@ -16,7 +16,7 @@ public class HexRotator : MonoBehaviour {
         
         var tile = slot.tile;
         var dt = Input.GetAxis("Mouse ScrollWheel");
-        slot.wantedRotation = Quaternion.AngleAxis(slot.wantedRotation.eulerAngles.z + 60 * dt, Vector3.forward);
+        slot.tile.wantedRotation = Quaternion.AngleAxis(slot.tile.wantedRotation.eulerAngles.z + 60 * dt, Vector3.forward);
 
         StartCoroutine(FixAngle(slot));
     }
@@ -24,14 +24,14 @@ public class HexRotator : MonoBehaviour {
     IEnumerator FixAngle(HexSlot slot) {
         yield return new WaitForSeconds(0.5f);
 
-        var a = slot.wantedRotation.eulerAngles.z;
+        var a = slot.tile.wantedRotation.eulerAngles.z;
 
-        if(a <= 30 + 60*0 && a >= -30)       slot.wantedRotation = Quaternion.AngleAxis(0*60, Vector3.forward);
-        if(a <= 30 + 60*1 && a >= 30 + 60*0) slot.wantedRotation = Quaternion.AngleAxis(1*60, Vector3.forward);
-        if(a <= 30 + 60*2 && a >= 30 + 60*1) slot.wantedRotation = Quaternion.AngleAxis(2*60, Vector3.forward);
-        if(a <= 30 + 60*3 && a >= 30 + 60*2) slot.wantedRotation = Quaternion.AngleAxis(3*60, Vector3.forward);
-        if(a <= 30 + 60*4 && a >= 30 + 60*3) slot.wantedRotation = Quaternion.AngleAxis(4*60, Vector3.forward);
-        if(a <= 30 + 60*5 && a >= 30 + 60*4) slot.wantedRotation = Quaternion.AngleAxis(5*60, Vector3.forward);
-        if(a <= 30 + 60*6 && a >= 30 + 60*5) slot.wantedRotation = Quaternion.AngleAxis(6*60, Vector3.forward);
+        if(a <= 30 + 60*0 && a >= -30)       slot.tile.wantedRotation = Quaternion.AngleAxis(0*60, Vector3.forward);
+        if(a <= 30 + 60*1 && a >= 30 + 60*0) slot.tile.wantedRotation = Quaternion.AngleAxis(1*60, Vector3.forward);
+        if(a <= 30 + 60*2 && a >= 30 + 60*1) slot.tile.wantedRotation = Quaternion.AngleAxis(2*60, Vector3.forward);
+        if(a <= 30 + 60*3 && a >= 30 + 60*2) slot.tile.wantedRotation = Quaternion.AngleAxis(3*60, Vector3.forward);
+        if(a <= 30 + 60*4 && a >= 30 + 60*3) slot.tile.wantedRotation = Quaternion.AngleAxis(4*60, Vector3.forward);
+        if(a <= 30 + 60*5 && a >= 30 + 60*4) slot.tile.wantedRotation = Quaternion.AngleAxis(5*60, Vector3.forward);
+        if(a <= 30 + 60*6 && a >= 30 + 60*5) slot.tile.wantedRotation = Quaternion.AngleAxis(6*60, Vector3.forward);
     }
 }

@@ -7,7 +7,7 @@ public class Player : MonoBehaviour {
     public string nickname;
     public Character character;
     public Color color;
-    public Deck deck;
+    public DeckAsset deck;
     public GameObject hero;
 
     [NonSerialized] public PlayerTable table;
