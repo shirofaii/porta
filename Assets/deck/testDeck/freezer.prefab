@@ -2,7 +2,8 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!4 &1107153685724675713 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: 9837250b7b92bfa4f96523437b0e63de, type: 3}
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 9837250b7b92bfa4f96523437b0e63de,
+    type: 3}
   m_PrefabInstance: {fileID: 1107153685724800001}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1258218443131703786
@@ -293,6 +294,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background: {fileID: 2498425101320064791}
   type: 1
+  frozen: 0
+  taped: 0
 --- !u!210 &7788496384177465697
 SortingGroup:
   m_ObjectHideFlags: 0
