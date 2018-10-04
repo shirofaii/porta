@@ -13,5 +13,7 @@ MonoBehaviour:
   m_Name: testDeck
   m_EditorClassIdentifier: 
   tiles:
-  - amount: 30
+  - amount: 2
     prefab: {fileID: 5397394423015351631, guid: 05f93d714d7d8434a9c67f4b17466961, type: 3}
+  - amount: 2
+    prefab: {fileID: 2331838796986786357, guid: a7526bf7ac61f5d49a3ac35f06b5cdf5, type: 3}

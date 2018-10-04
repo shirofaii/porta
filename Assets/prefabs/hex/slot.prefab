@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4466203654691543706}
   - component: {fileID: 4358827614151158398}
   - component: {fileID: 4412235425128181366}
-  - component: {fileID: 8188280837513178520}
   m_Layer: 0
   m_Name: slot
   m_TagString: Untagged
@@ -64,17 +63,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.1
---- !u!210 &8188280837513178520
-SortingGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4460966322096613068}
-  m_Enabled: 1
-  m_SortingLayerID: 2075099333
-  m_SortingLayer: 1
-  m_SortingOrder: 0
 --- !u!1 &4462454664240954402
 GameObject:
   m_ObjectHideFlags: 0
@@ -140,8 +128,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2075099333
-  m_SortingLayer: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8a426c52e1e770f4c9dbabdc6d2257f2, type: 3}
   m_Color: {r: 0.7075472, g: 0.7075472, b: 0.7075472, a: 0.5019608}
