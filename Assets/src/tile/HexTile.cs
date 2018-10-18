@@ -8,7 +8,7 @@ public class HexTile : MonoBehaviour {
     public enum Type { Hero, Unit, Action, Upgrade, Floor, Wall, Secret };
 
     //[SerializeField] Sector[] sectors = new Sector[6];
-    public SpriteRenderer background;
+    //public SpriteRenderer background;
 
     [NonSerialized] public Player player;
     public Type type;
@@ -28,12 +28,16 @@ public class HexTile : MonoBehaviour {
         transform.rotation = Quaternion.Lerp(transform.rotation, wantedRotation, 0.1f);
     }
 
+    public void SetColor(Color color) {
+        Array.ForEach(GetComponentsInChildren<SpriteRenderer>(), x => x.color = color);
+    }
+
     public bool frozen = false;
     public void ToggleFreeze() {
         frozen = !frozen;
 
         var frozenColor = Color.Lerp(player.color, Color.white, 0.6f);
-        background.color = frozen ? frozenColor : player.color;
+        SetColor(frozen ? frozenColor : player.color);
     }
 
     public bool taped = false;
@@ -41,6 +45,6 @@ public class HexTile : MonoBehaviour {
         taped = !taped;
 
         var tapedColor = Color.Lerp(player.color, Color.black, 0.4f);
-        background.color = taped ? tapedColor : player.color;
+        SetColor(taped ? tapedColor : player.color);
     }
 }

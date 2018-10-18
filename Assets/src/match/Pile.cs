@@ -26,7 +26,7 @@ public class Pile : MonoBehaviour {
             var tile = x.GetComponent<HexTile>();
             x.SetActive(false);
             tile.player = owner;
-            tile.background.color = owner.color;
+            tile.SetColor(owner.color);
 
             return tile;
         }).ToList();

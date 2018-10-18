@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 9837250b7b92bfa4f96523437b0e63de
+guid: 5a47a4f3c2a70d74a8f95e23c508e166
 ScriptedImporter:
   fileIDToRecycleName:
-    100000: gameObject/snowflake-1
-    400000: gameObject/snowflake-1/Transform
-    21200000: gameObject/snowflake-1/SpriteRenderer
+    100000: gameObject/protection
+    400000: gameObject/protection/Transform
+    21200000: gameObject/protection/SpriteRenderer
     21300000: sprite
     100100000: gameObject
   externalObjects: {}
@@ -19,7 +19,7 @@ ScriptedImporter:
   alignment: 0
   customPivot: {x: 0, y: 0}
   generatePhysicsShape: 0
-  preserveViewport: 0
+  preserveViewport: 1
   advancedMode: 0
   predefinedResolutionIndex: 1
   targetResolution: 1080
@@ -51,5 +51,5 @@ ScriptedImporter:
         y: 0
         width: 0
         height: 0
-      spriteID: cd31cffc460b00a4b860f1ff66cc5006
+      spriteID: cf3a764df7e591b4a84ff04d6cba3b94
     PhysicsOutlines: []

@@ -23,6 +23,7 @@ public class HexRotator : MonoBehaviour {
 
     IEnumerator FixAngle(HexSlot slot) {
         yield return new WaitForSeconds(0.5f);
+        if(slot == null) yield break;
 
         var a = slot.tile.wantedRotation.eulerAngles.z;
 

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300">
+  <defs>
+    <style>
+      .a {
+        fill: #fff;
+        stroke: #000;
+        stroke-miterlimit: 10;
+        stroke-width: 3px;
+      }
+    </style>
+  </defs>
+  <title>hex</title>
+  <path class="a" d="M194.23,63.4H105.77a10,10,0,0,0-8.66,5L52.89,145a10,10,0,0,0,0,10l44.22,76.6a10,10,0,0,0,8.66,5h88.46a10,10,0,0,0,8.66-5L247.11,155a10,10,0,0,0,0-10L202.89,68.4A10,10,0,0,0,194.23,63.4Z"/>
+</svg>
