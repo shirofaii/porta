@@ -47,7 +47,7 @@ public class HexSlot : MonoBehaviour {
         }
     }
 
-    void Impale(bool value) {
+    public void Impale(bool value) {
         if(value) {
             tile.impaledTiles = tiles.GetRange(0, tiles.Count - 1);
         } else {

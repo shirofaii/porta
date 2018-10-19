@@ -521,7 +521,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deck: {fileID: 11400000, guid: 3265f5315d9e90d4c817d7d57442658f, type: 2}
-  hero: {fileID: 4477460280427051755, guid: a4e22e5bef09bec498c6e09375731045, type: 3}
+  hero: {fileID: 0}
 --- !u!1001 &352367319
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -741,7 +741,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1230581326}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &842557972
 PrefabInstance:
@@ -882,7 +882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nickname: alice
   character: {fileID: 0}
-  color: {r: 0.46244714, g: 0.9056604, b: 0.28622285, a: 1}
+  color: {r: 0.27687788, g: 0.686333, b: 0.9622642, a: 1}
 --- !u!4 &1039067535 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4466203654691543706, guid: 7413ddc5ccba1ce469f8bb8a4bedde32,
@@ -1084,7 +1084,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deck: {fileID: 0}
-  hero: {fileID: 0}
+  hero: {fileID: 11400000, guid: b65c039a283062d46a91fe8cf0221150, type: 2}
 --- !u!1 &1165981795 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4460966322096613068, guid: 7413ddc5ccba1ce469f8bb8a4bedde32,
@@ -1110,7 +1110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deck: {fileID: 11400000, guid: 3265f5315d9e90d4c817d7d57442658f, type: 2}
-  hero: {fileID: 4477460280427051755, guid: a4e22e5bef09bec498c6e09375731045, type: 3}
+  hero: {fileID: 0}
 --- !u!1 &1230581324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1154,8 +1154,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1014407119}
-  - {fileID: 716746404}
   - {fileID: 1784601705}
+  - {fileID: 716746404}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1323,7 +1323,7 @@ Transform:
   m_Children:
   - {fileID: 99474119}
   m_Father: {fileID: 1230581326}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1784601706
 MonoBehaviour:
@@ -1339,7 +1339,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nickname: bob
   character: {fileID: 0}
-  color: {r: 0.2688679, g: 0.5682861, b: 1, a: 1}
+  color: {r: 0.45368588, g: 0.764151, b: 0.075694196, a: 1}
 --- !u!1001 &1891002628
 PrefabInstance:
   m_ObjectHideFlags: 0

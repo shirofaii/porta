@@ -9,23 +9,22 @@ public class Pile : MonoBehaviour {
     [NonSerialized] public HexSlot slot;
 
     public DeckAsset deck;
-    public HexTile hero;
+    public DeckAsset hero;
 
     void Start() {
         owner = GetComponentInParent<Player>();
         slot = GetComponent<HexSlot>();
 
         if(deck != null) {
-            CreatePile(deck);
+            CreatePile(deck, shuffle: true);
         }
         if(hero != null) {
-            var h = Instantiate(hero, transform);
-            h.SetColor(owner.color);
-            slot.Place(h);
+            CreatePile(hero);
+            slot.Impale(true);
         }
     }
 
-    public void CreatePile(DeckAsset deck) {
+    public void CreatePile(DeckAsset deck, bool shuffle = false) {
         var list = deck.tiles.SelectMany(x => {
             return new HexTile[x.amount].Select(_ => Instantiate(x.prefab, transform));
         }).Select(x => {
@@ -36,7 +35,9 @@ public class Pile : MonoBehaviour {
 
             return tile;
         }).ToList();
-        list.Shuffle();
+        if(shuffle) {
+            list.Shuffle();
+        }
         slot.Place(list);
     }
 
