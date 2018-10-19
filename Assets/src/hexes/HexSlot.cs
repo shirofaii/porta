@@ -29,6 +29,32 @@ public class HexSlot : MonoBehaviour {
         }
     }
 
+    public void ToggleImpale() {
+        if(tiles.Count < 2) return;
+
+        var impaledTile = tiles.Find(x => x.impaledTiles.Count > 0);
+        if(impaledTile != null) {
+            if(tiles.Count == impaledTile.impaledTiles.Count + 1) {
+                //only one implaed stack in this slot
+                Impale(false);
+            } else {
+                // reform many stacks into big one
+                Impale(false);
+                Impale(true);
+            }
+        } else {
+            Impale(true);
+        }
+    }
+
+    void Impale(bool value) {
+        if(value) {
+            tile.impaledTiles = tiles.GetRange(0, tiles.Count - 1);
+        } else {
+            tiles.ForEach(x => x.impaledTiles = new List<HexTile>());
+        }
+    }
+
     public void Place(HexTile tile) {
         tiles.Push(tile);
         
@@ -67,7 +93,19 @@ public class HexSlot : MonoBehaviour {
     }
 
     public void DropTo(HexSlot target) {
-        target.Place(this.Take());
+        if(tile.impaledTiles.Count > 0) {
+            var impaled = Take();
+            for(var i = 0; i < impaled.impaledTiles.Count; i++) {
+                Take();
+            }
+            //for(var i = impaled.impaledTiles.Count - 1; i >= 0; i--) {
+            for(var i = 0; i < impaled.impaledTiles.Count; i++) {
+                target.Place(impaled.impaledTiles[i]);
+            }
+            target.Place(impaled);
+        } else {
+            target.Place(this.Take());
+        }
     }
 
     void CancelDrop() {

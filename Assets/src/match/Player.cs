@@ -7,13 +7,14 @@ public class Player : MonoBehaviour {
     public string nickname;
     public Character character;
     public Color color;
-    public DeckAsset deck;
-    public GameObject hero;
+    // public DeckAsset deck;
+    // public HexTile hero;
 
     [NonSerialized] public PlayerTable table;
 
     void Awake() {
         table = GetComponentInChildren<PlayerTable>();
+        
     }
 
     public List<HexTile> ownedTiles { get {

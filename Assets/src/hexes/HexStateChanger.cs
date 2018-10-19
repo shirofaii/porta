@@ -18,5 +18,8 @@ public class HexStateChanger : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.LeftShift)) {
             slot.tile.ToggleTap();
         }
+        if(Input.GetKeyDown(KeyCode.P)) {
+            slot.ToggleImpale();
+        }
     }
 }

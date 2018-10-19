@@ -330,6 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9caa94e06a3b16f468a44935ec9dd222, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  impaledTiles: []
   type: 1
   frozen: 0
   taped: 0

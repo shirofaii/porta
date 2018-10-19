@@ -9,6 +9,7 @@ public class Pile : MonoBehaviour {
     [NonSerialized] public HexSlot slot;
 
     public DeckAsset deck;
+    public HexTile hero;
 
     void Start() {
         owner = GetComponentInParent<Player>();
@@ -16,6 +17,11 @@ public class Pile : MonoBehaviour {
 
         if(deck != null) {
             CreatePile(deck);
+        }
+        if(hero != null) {
+            var h = Instantiate(hero, transform);
+            h.SetColor(owner.color);
+            slot.Place(h);
         }
     }
 
