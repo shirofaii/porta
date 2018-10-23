@@ -342,7 +342,7 @@ GameObject:
   - component: {fileID: 6771670868011176547}
   - component: {fileID: 3608744476990553868}
   m_Layer: 0
-  m_Name: frost0
+  m_Name: frostHero
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -385,6 +385,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   impaledTiles: []
   type: 1
+  name: Frost hero
+  text: Attack also freeze enemy
   frozen: 0
   taped: 0
 --- !u!210 &3608744476990553868

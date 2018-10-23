@@ -15,6 +15,10 @@ public class HexTile : MonoBehaviour {
     [NonSerialized] public Player player;
     public Type type;
 
+    public string name;
+    [TextArea(3,10)]
+    public string text;
+
     Quaternion _wantedRotation;
     public Quaternion wantedRotation { get {
         return _wantedRotation;

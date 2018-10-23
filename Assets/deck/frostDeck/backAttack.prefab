@@ -214,6 +214,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   impaledTiles: []
   type: 1
+  name: 
+  text: 
   frozen: 0
   taped: 0
 --- !u!210 &585944389560462293
