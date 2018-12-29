@@ -7,13 +7,13 @@ using UnityEngine;
 public class HexTile : MonoBehaviour {
     public enum Type { Hero, Unit, Action, Upgrade, Floor, Wall, Secret };
 
-    public List<HexTile> impaledTiles = new List<HexTile>();
+    [NonSerialized] public List<HexTile> impaledTiles = new List<HexTile>();
 
     //[SerializeField] Sector[] sectors = new Sector[6];
     //public SpriteRenderer background;
 
     [NonSerialized] public Player player;
-    public Type type;
+    //public Type type;
 
     public string name;
     [TextArea(3,10)]
@@ -23,7 +23,6 @@ public class HexTile : MonoBehaviour {
     public Quaternion wantedRotation { get {
         return _wantedRotation;
     } set {
-        impaledTiles.ForEach(x => x._wantedRotation = value);
         _wantedRotation = value;
     }}
 
@@ -52,7 +51,7 @@ public class HexTile : MonoBehaviour {
         impaledTiles.ForEach(x => x.SetColor(color));
     }
 
-    public bool frozen = false;
+    [NonSerialized] public bool frozen = false;
     public void ToggleFreeze() {
         frozen = !frozen;
 
@@ -60,7 +59,7 @@ public class HexTile : MonoBehaviour {
         SetColor(frozen ? frozenColor : player.color);
     }
 
-    public bool taped = false;
+    [NonSerialized] public bool taped = false;
     public void ToggleTap() {
         taped = !taped;
 
